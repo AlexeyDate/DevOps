@@ -15,7 +15,7 @@ jobs:
   
     strategy:
       matrix:
-          neural_network: ['GTSRB_CNN.h5', '${{ env.app_name }}_${{ runner.os }}.txt']
+          neural_network: ['GTSRB_CNN.h5']
           
     steps:
       - uses: actions/checkout@v3

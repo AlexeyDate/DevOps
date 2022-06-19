@@ -12,10 +12,6 @@ env:
 jobs:
   build_CNN:
     runs-on: ['self-hosted', 'Linux', 'X64']
-  
-    strategy:
-      matrix:
-          neural_network: [${{ env.app_name }}_${{ runner.os }}.txt]
           
     steps:
       - uses: actions/checkout@v3
@@ -27,10 +23,17 @@ jobs:
         if: success()
         run: python3 train_CNN.py
         
-      - name: Upload artifact
+      - name: Upload_artifact
         uses: actions/upload-artifact@v3
         with:
-          name: my-artifact
-          path: 
-              ${{ matrix.neural_network }}
+          name: config
+          path: ${{ matrix.neural_network }} 
+          retention-days: 2
+          
+      - name: Upload_artifact 
+        if: success()
+        uses: actions/upload-artifact@v3  
+        with:
+          name: weights
+          path: GTSRB_CNN.h5
           retention-days: 2

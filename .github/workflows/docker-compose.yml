@@ -21,7 +21,7 @@ jobs:
       
       - name: train_weights
         if: success()
-        run: python3 train.py
+        run: python3 train_CNN.py
         
       - name: Upload artifact
         uses: actions/upload-artifact@v3

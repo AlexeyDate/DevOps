@@ -40,7 +40,7 @@ jobs:
         
   telegram:
     needs: build_CNN
-    runs-on: ['self-hosted', 'Linux', 'X64']
+    runs-on: ['ubuntu-20.04']
       
     steps:
       - uses: appleboy/telegram-action@master

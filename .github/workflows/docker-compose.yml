@@ -53,7 +53,7 @@ jobs:
         if: success()
         uses: actions/download-artifact@v3
         with:
-          name: weigths
+          name: weights
           path: artifacts
       
       - name: send_to_telegram

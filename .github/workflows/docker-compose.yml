@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Build
-        run: python3 print_conf.py3 > conf.txt
+        run: python3 print_conf.py > conf.txt
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3

@@ -12,9 +12,6 @@ env:
 jobs:
   build_CNN:
     runs-on: tensorflow/tensoflow:latest
-
-    env:
-      app_name: configure_${{ runner.os }}
   
     steps:
       - uses: actions/checkout@v3

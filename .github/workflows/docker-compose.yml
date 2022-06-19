@@ -10,10 +10,10 @@ jobs:
   build_CNN:
     runs-on: tensorflow/tensoflow:latest
 
-env:
-  app_name: configure_${{ runner.os }}
+    env:
+      app_name: configure_${{ runner.os }}
   
-      steps:
+    steps:
       - uses: actions/checkout@v3
 
       - name: Build

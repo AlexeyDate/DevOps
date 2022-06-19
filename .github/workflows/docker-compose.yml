@@ -51,7 +51,7 @@ jobs:
       
       - name: download_weights_file
         if: success()
-        uses: appleboy/telegram-action@master
+        uses: actions/download-artifact@v3
         with:
           name: weigths
           path: artifacts

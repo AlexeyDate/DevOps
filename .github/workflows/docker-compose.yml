@@ -15,7 +15,7 @@ jobs:
   
     strategy:
       matrix:
-          neural_network: ['${{ env.app_name }}_${{ runner.os }}.txt']
+          neural_network: [${{ env.app_name }}_${{ runner.os }}.txt]
           
     steps:
       - uses: actions/checkout@v3

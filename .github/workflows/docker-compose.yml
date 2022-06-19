@@ -43,17 +43,18 @@ jobs:
     runs-on: ['ubuntu-20.04']
       
     steps:
-      - name: download_config_file 
-        uses: actions/download-artifact@v3
-        with:
-          name: config
-          path: artifacts
       
       - name: download_weights_file
-        if: success()
         uses: actions/download-artifact@v3
         with:
           name: weights
+          path: artifacts
+    
+      - name: download_config_file 
+        if: success()
+        uses: actions/download-artifact@v3
+        with:
+          name: config
           path: artifacts
       
       - name: send_to_telegram
@@ -61,5 +62,5 @@ jobs:
         with:
           to: ${{ secrets.TGCHANNELID }}
           token: ${{ secrets.TGKEY }}
-          message: <b>(Neural network configuration file and weigths after training)</b>
+          message: Neural network configuration file and weigths after training
           document: artifacts/**

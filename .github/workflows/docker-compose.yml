@@ -13,6 +13,10 @@ jobs:
   build_CNN:
     runs-on: ['self-hosted', 'Linux', 'X64']
   
+    strategy:
+      matrix:
+          neural_network: ['GTSRB_CNN.h5', '${{ env.app_name }}_${{ runner.os }}.txt']
+          
     steps:
       - uses: actions/checkout@v3
 
@@ -28,6 +32,5 @@ jobs:
         with:
           name: my-artifact
           path: 
-                ${{ env.app_name }}_${{ runner.os }}.txt
-                GTSRB_CNN.h5
+              ${{ matrix.neural_network }}
           retention-days: 2

@@ -23,14 +23,14 @@ jobs:
         if: success()
         run: python3 train_CNN.py
         
-      - name: Upload_artifact
+      - name: Upload_configure
         uses: actions/upload-artifact@v3
         with:
           name: config
           path: ${{ env.app_name }}_${{ runner.os }}.txt 
           retention-days: 2
           
-      - name: Upload_artifact 
+      - name: Upload_weights 
         if: success()
         uses: actions/upload-artifact@v3  
         with:

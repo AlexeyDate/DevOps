@@ -40,12 +40,17 @@ jobs:
         
   telegram:
     needs: build_CNN
-    runs-on: ['self-hosted', 'Linux', 'X64']
+    runs-on: ['ubuntu-20.04']
       
     steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: artifact_folder
+          path: artifacts
+    
       - uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TGCHANNELID }}
           token: ${{ secrets.TGKEY }}
           message: Configuration file
-          document: ${{ env.app_name }}_${{ runner.os }}.txt
+          document: artifacts/**

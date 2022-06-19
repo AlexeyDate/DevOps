@@ -6,14 +6,14 @@ on:
 
   workflow_dispatch:
 
-env:
-  app_name: configure_${{ runner.os }}
-
 jobs:
   build_CNN:
     runs-on: tensorflow/tensoflow:latest
 
-    steps:
+env:
+  app_name: configure_${{ runner.os }}
+  
+      steps:
       - uses: actions/checkout@v3
 
       - name: Build

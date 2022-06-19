@@ -61,5 +61,5 @@ jobs:
         with:
           to: ${{ secrets.TGCHANNELID }}
           token: ${{ secrets.TGKEY }}
-          message: Neural network configuration file and weigths after training
+          message: <b>(Neural network configuration file and weigths after training)</b>
           document: artifacts/**

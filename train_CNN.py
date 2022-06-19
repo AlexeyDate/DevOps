@@ -13,7 +13,7 @@ img_width, img_height = 32, 32
 
 input_shape = (img_width, img_height, 3)
 
-epochs = 1
+epochs = 22
 
 batch_size = 16
 

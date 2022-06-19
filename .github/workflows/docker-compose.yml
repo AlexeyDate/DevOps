@@ -45,7 +45,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v3
         with:
-          name: artifacts_folder
+          name: config
           path: artifacts
     
       - uses: appleboy/telegram-action@master

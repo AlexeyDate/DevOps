@@ -27,6 +27,6 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: my-artifact
-          path: ${{ env.app_name }}_${{ runner.os }}.txt |
+          path: ${{ env.app_name }}_${{ runner.os }}.txt
                 GTSRB_CNN.h5
           retention-days: 2

@@ -37,3 +37,15 @@ jobs:
           name: weights
           path: GTSRB_CNN.h5
           retention-days: 2
+        
+  telegram:
+    needs: build_CNN
+    runs-on: ['self-hosted', 'Linux', 'X64']
+      
+    steps:
+      - uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TGCHANNELID }}
+          token: ${{ secrets.TGKEY }}
+          message: Confituration file
+          document: ${{ env.app_name }}_${{ runner.os }}.txt 

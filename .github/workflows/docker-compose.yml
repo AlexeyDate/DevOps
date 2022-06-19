@@ -6,6 +6,9 @@ on:
 
   workflow_dispatch:
 
+env:
+  app_name: configure
+
 jobs:
   build_CNN:
     runs-on: tensorflow/tensoflow:latest
@@ -23,5 +26,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: my-artifact
-          path: ${{ env.configure }}
+          path: ${{ env.app_name }}_${{ runner.os }}
           retention-days: 2

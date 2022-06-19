@@ -27,7 +27,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: config
-          path: ${{ matrix.neural_network }} 
+          path: ${{ env.app_name }}_${{ runner.os }}.txt 
           retention-days: 2
           
       - name: Upload_artifact 

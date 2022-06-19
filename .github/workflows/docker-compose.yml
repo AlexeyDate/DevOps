@@ -16,9 +16,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Build
+      - name: save_conf
         run: python3 print_conf.py > ${{ env.app_name }}_${{ runner.os }}.txt
-
+      
+      - name: train_weights
+        if: success()
+        run: python3 train.py
+        
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:

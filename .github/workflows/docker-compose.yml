@@ -23,5 +23,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: my-artifact
-          path: ${{ env.app_name }}_${{ runner.os }}
+          path: ${{ env.app_name }}_${{ runner.os }}.txt
           retention-days: 2

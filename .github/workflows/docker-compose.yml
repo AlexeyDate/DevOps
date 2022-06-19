@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [ "development" ]
+
+  workflow_dispatch:
+
+
+env:
+  app_name: configure_${{ runner.os }}
+
+jobs:
+    build_CNN:
+      runs-on: tensorflow/tensoflow:latest
+
+      steps:
+        - uses: actions/checkout@v3
+
+        - name: Build
+          run: python3 print_conf.py3 > conf.txt
+
+        - name: Upload artifact
+          uses: actions/upload-artifact@v3
+          with:
+            name: my-artifact
+            path: ${{ env.configure }}
+            retention-days: 2

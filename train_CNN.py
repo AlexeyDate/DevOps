@@ -47,9 +47,3 @@ history = model.fit(train_generator, epochs=epochs, batch_size=batch_size, valid
 
 model.save("GTSRB_CNN.h5")
 
-plt.plot(history.history['loss'], label='Ошибка на обучающем наборе')
-plt.plot(history.history['val_loss'], label='Ошибка на проверочном наборе')
-plt.xlabel('Эпоха обучения')
-plt.ylabel('Ошибка')
-plt.legend()
-plt.show()
